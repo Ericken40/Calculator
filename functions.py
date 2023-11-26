@@ -1,6 +1,6 @@
 var = ''
 aux = ''
-op = [ '+', '-', '÷', 'x']
+op = ['+', '-', '÷', 'x']
 
 
 def enter_key(n):
@@ -19,7 +19,6 @@ def result():
     return var
 
 
-
 def plus():
     global var
     global aux
@@ -31,20 +30,20 @@ def plus():
         return var
     else:
         return '+'
-    
+
 
 def minus():
     global var
     var = var + '-0'
     var = str(eval(var))
     if var[-1] == '-':
-        var = var +'0'
+        var = var + '0'
         var = str(eval(var))
         return var
     else:
         return '-'
-    
-    
+
+
 def times():
     global var
     global aux
@@ -60,8 +59,8 @@ def times():
         return 'x'
     var = var + '*1'
     var = str(eval(var))
-    return 'x'    
-    
+    return 'x'
+
 
 def div():
     global var
@@ -71,7 +70,7 @@ def div():
         aux = str(eval(aux))
         clear(var)
         var = aux
-        return var 
+        return var
     elif len(var) > 0 and var[-1] != '÷':
         var = var.replace('÷', '/')
         var = str(eval(var))
@@ -79,8 +78,7 @@ def div():
     var = var + '/1'
     var = str(eval(var))
     return '÷'
-    
-        
+
 
 def clear():
     global var
@@ -101,7 +99,7 @@ def percent():
                 aux = var.replace(i, '*')
                 aux += '/100'
                 aux = str(eval(aux))
-                var = var[:var.index(i) + 1]
+                var = var[: var.index(i) + 1]
                 var = var.replace(i, '/')
                 var = var + aux
                 return str(eval(var))
@@ -109,9 +107,9 @@ def percent():
                 aux = var.replace(i, '*')
                 aux += '/100'
                 aux = str(eval(aux))
-                var = var[:var.index(i) + 1]
+                var = var[: var.index(i) + 1]
                 var = var + aux
                 return str(eval(var))
     if '+-x÷' not in var:
         var += '/100'
-    return str(eval(var)) 
+    return str(eval(var))

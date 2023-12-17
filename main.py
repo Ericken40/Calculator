@@ -66,7 +66,7 @@ b2.place(x=120, y=0)
 
 b3 = Button(
     frame_key,
-    command=lambda: app_text.set(div()),
+    command=lambda: app_text.set(enter_key(div())),
     text='÷',
     width=5,
     height=2,
